@@ -3,7 +3,7 @@ class House:
     houses_history = []
 
     def __new__(cls, *args, **kwargs):
-        a = super(House, cls).__new__(cls)
+        a = super().__new__(cls)
         return a
 
 
