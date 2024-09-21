@@ -13,8 +13,13 @@ class User:   # Создаем пользователя
     def __init__(self, username, password, password_confirm):
         self.username = username
         if password == password_confirm: # если пароль будет совпадать с пасворд конфирм, только тогда будем выдавать пароль
-            self.password = password
+            if len(password) >= 8 and password.isalpha() ==False and password.isalnum() ==True and password.isdigit() ==False and password.islower() ==False and password.isupper() ==False:
+                print('Продолжаем регистрацию')
+                self.password = password
+            else:
+                print('Ваш пароль должен содержать не менее 8 символов, из них = строчные буквы, хотя бы одну заглавную букву, и хотя бы одну цифру')
 
+        print('Попробуйте снова')
 
 
 
