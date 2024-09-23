@@ -3,8 +3,8 @@ class House:
     houses_history = []
 
     def __new__(cls, *args, **kwargs):
-        a = super().__new__(cls)
-        return a
+        return super().__new__(cls)
+
 
 
     def __init__(self, name, number_of_floors):
@@ -14,14 +14,14 @@ class House:
 
 
 
-    def go_to(self, new_floor):
-        for i in range(1, new_floor+1):
-            new_floor = i
-            print(f"{new_floor}")
-            if new_floor > self.number_of_floors or new_floor < 1:
-                print('Такого этажа не существует')
-                return
-
+    # def go_to(self, new_floor):
+    #     for i in range(1, new_floor+1):
+    #         new_floor = i
+    #         print(f"{new_floor}")
+    #         if new_floor > self.number_of_floors or new_floor < 1:
+    #             print('Такого этажа не существует')
+    #             return
+    #
 
 
     # def __len__(self):
