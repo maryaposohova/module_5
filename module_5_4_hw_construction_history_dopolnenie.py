@@ -1,23 +1,27 @@
+"""
+Доработка.
+Ответ преподавателя:  "Правильней вписывать здание в историю сразу при создании объекта
+(создание объекта в методе __new__),тем более можно удобно обращаться к атрибутам класса используя ссылку
+на сам класс - cls.
+С уважением,
+Виктория"
+"""
+
 
 class House:
     houses_history = []
 
     def __new__(cls, name, number_of_floors):
-         a = super().__new__(cls)
-         House.houses_history.append(name)
-         return a
+        a = super().__new__(cls)
+        House.houses_history.append(name)
+        return a
 
     def __init__(self, name, number_of_floors):
         self.name = name
         self.number_of_floors = number_of_floors
 
-
-
-
-
     def __del__(self):
         print(f'"{self.name} снесён, но он останется в истории"')
-
 
 
 h1 = House('ЖК Эльбрус', 10)
@@ -32,6 +36,3 @@ del h2
 del h3
 
 print(House.houses_history)
-
-
-
